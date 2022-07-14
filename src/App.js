@@ -1,24 +1,20 @@
-import logo from './logo.svg';
 import './App.css';
+import Container from '@mui/material/Container';
+import {ThemeProvider} from '@emotion/react';
+import theme from './styles/theme/theme';
+import AppBar from './components/appbar/Index';
+import Navbar from './components/navbar/Index';
+import { Box } from '@mui/system';
+import Page from './components/page/Page';
+import Videos from './components/videos/Index';
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <ThemeProvider theme={theme}>
+          <AppBar />
+          <Navbar />
+          <Videos />
+    </ThemeProvider>
   );
 }
 
